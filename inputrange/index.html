@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .backgroundchage{
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <input type="range" step="0.01" mix="0" max="1" v-model="click">{{click}}
+        <div class="backgroundchage" v-bind:style="{backgroundColor:'rgba(90,0,90,'+click+')'}"></div>
+    </div>
+    <script>
+        const create=Vue.createApp({
+            data(){
+                return{
+                    click:0
+                }
+            }
+        })
+        create.mount("#one")
+    </script>
+    
+</body>
+</html>
